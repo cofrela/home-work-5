@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chess</title>
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="chess-board"></div>
+</body>
+
+<script>
+    var chessBoard = document.querySelector('.chess-board');
+    
+    for (var i = 0; i < 8; i++) {
+        for (var j = 0; j < 8; j++) {
+            var item = document.createElement('div');
+            chessBoard.appendChild(item);
+            item.classList.add('chess-white');
+            if ((i + j) % 2 ) {
+                item.classList.add('chess-gray');
+            }
+            
+            // буквы
+            /*
+            if (i == 0 && j == 0 || i == 0 && j == 7 || i == 7 && j == 0 || i == 7 && j == 7) item.innerHTML = "л";
+            if (i == 0 && j == 1 || i == 0 && j == 6 || i == 7 && j == 1 || i == 7 && j == 6) item.innerHTML = "к";
+            if (i == 0 && j == 2 || i == 0 && j == 5 || i == 7 && j == 2 || i == 7 && j == 5) item.innerHTML = "с";
+            if (i == 0 && j == 3 || i == 7 && j == 3) item.innerHTML = "Ф";
+            if (i == 0 && j == 4 || i == 7 && j == 4) item.innerHTML = "К";
+            if (i == 1 || i == 6) item.innerHTML = "п";
+            */
+            
+            // фигуры
+            if (i == 0 && j == 0 || i == 0 && j == 7) item.innerHTML = '&#9820;'; // black
+            if (i == 7 && j == 0 || i == 7 && j == 7) item.innerHTML = '&#9814;'; // white
+            
+            if (i == 0 && j == 1 || i == 0 && j == 6) item.innerHTML = '&#9822;'; // black
+            if (i == 7 && j == 1 || i == 7 && j == 6) item.innerHTML = '&#9816;'; // white
+            
+            if (i == 0 && j == 2 || i == 0 && j == 5) item.innerHTML = '&#9821;'; // black
+            if (i == 7 && j == 2 || i == 7 && j == 5) item.innerHTML = '&#9815;'; // white
+            
+            if (i == 0 && j == 3) item.innerHTML = '&#9819;'; // black
+            if (i == 7 && j == 3) item.innerHTML = '&#9813;'; // white
+            
+            if (i == 0 && j == 4) item.innerHTML = '&#9818;'; // black
+            if (i == 7 && j == 4) item.innerHTML = '&#9812;'; // white
+            
+            if (i == 1) item.innerHTML = '&#9823;'; // black
+            if (i == 6) item.innerHTML = '&#9817;'; // white 
+        }
+    }
+
+</script>
+
+</html>
